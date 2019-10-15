@@ -8,4 +8,8 @@ import javax.xml.ws.Service;
 @Component
 public class Controller {
     final Service service;
+
+    public Controller(Service service) {
+        this.service = service;
+    }
 }

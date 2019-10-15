@@ -1,8 +1,11 @@
 package service;
 
-@SpringBootApplication
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class Main {
     public static void main(String[] args) {
-        StringApplication.run(Main.class, args);
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                "applicationContext.xml");
     }
 }
