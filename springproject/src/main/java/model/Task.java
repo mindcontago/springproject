@@ -1,12 +1,12 @@
 package model;
 
+import java.util.Objects;
+
 public class Task {
     private Long taskId;
     private Long userId;
     private String taskName;
     private String status;
-
-
 
     public Task(Long taskId, Long userId, String taskName, String status) {
         this.userId = userId;
@@ -45,5 +45,17 @@ public class Task {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task task = (Task) o;
+        return Objects.equals(userId, task.userId) &&
+                Objects.equals(taskName, task.taskName);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, taskName);
     }
 }

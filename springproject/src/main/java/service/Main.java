@@ -22,13 +22,15 @@ public class Main {
         TaskController taskController = context.getBean(TaskController.class);
 
         User testUser = User.builder().userId((long) 1)
-                .name("James")
-                .surname("Bond")
+                .firstName("James")
+                .lastName("Bond")
                 .email("bond@aol.com")
-                .passowrd("333").build();
+                .password("333").build();
 
         userController.signUp(testUser);
         userController.signIn(testUser);
+
+        System.out.println(userController.signIn(testUser));
 
 //        House bean = context.getBean(House.class);
 //        bean.method();
